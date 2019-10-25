@@ -8,6 +8,13 @@
 
 docker version > /dev/null || curl -fsSL get.docker.com | bash
 
+或者
+
+
+docker version > /dev/null || curl -fsSL "https://raw.githubusercontent.com/pphub2019/file/master/docker.sh?token=AMF4EJGC4WSNLX27PQXUJWS5WL6DC" | bash
+
+
+
 service docker restart
 
 webapi 方式对接:
