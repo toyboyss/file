@@ -1,0 +1,4 @@
+yum -y install wget &&
+wget -N --no-check-certificate https://raw.githubusercontent.com/pphub2019/ss-panel-v3-mod-node-connect/master/ss-panel-v3-mod-node-connect.sh &&
+chmod +x ss-panel-v3-mod-node-connect.sh &&
+bash ss-panel-v3-mod-node-connect.sh
