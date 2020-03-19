@@ -1,0 +1,39 @@
+随着 Debian 8 进入 old stable 分支，Debian 9 开始成为了新的稳定版，不过随之而来的是锐速开心版的内核匹配问题。不过感谢 Vicer 大佬的及时更新，现在 Debian 9 也可以手动更换内核来安装锐速了。具体来说 Debian 9 上匹配锐速的内核是 4.9.0-4-amd64，下面我们就来手动更换内核安装锐速。
+
+1.下载内核到 VPS:
+
+wget http://security.debian.org/debian-security/pool/updates/main/l/linux/linux-image-4.9.0-4-amd64_4.9.65-3+deb9u1_amd64.deb
+
+2.安装内核：
+
+dpkg -i linux-image-4.9.0-4-amd64_4.9.65-3+deb9u1_amd64.deb
+
+3.查看系统中已安装的内核：
+
+dpkg -l|grep linux-image
+
+此时会看到形如以下所示：
+
+linux-image-4.9.0-4-amd64
+
+linux-image-4.9.0-8-amd64
+
+4.卸载除 4.9.0-4 以外的所有内核：
+
+apt purge  linux-image-4.9.0-8-amd64
+
+注：此处请勿复制粘贴，需按照步骤3中实际显示操作
+
+5.系统此时会弹出提示，选择 NO 并回车。随后再次执行步骤3/4，直到确认只剩下 4.9.0-4
+
+6.更新引导并重启系统：
+
+update-grub
+
+reboot
+
+7.在系统重启后运行以下命令安装锐速即可：
+
+bash <(wget --no-check-certificate -qO- https://github.com/MoeClub/lotServer/raw/master/Install.sh) install
+
+不过默认的许可证有效期只有三个月，如果需要生成长期许可的话，可以查看这个项目，替换掉 Install.sh 中的许可生成网址（"https://api.moeclub.org/lotServer?ver=${acce_ver}&mac=${Mac}"）为自己的即可。
