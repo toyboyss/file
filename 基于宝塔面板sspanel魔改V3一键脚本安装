@@ -1,7 +1,7 @@
+Sspanel前端一键脚本
 wget -N --no-check-certificate https://raw.githubusercontent.com/pphub2019/sspanel-v3-mod-uim-bt/master/sspanel-v3-mod-uim-bt.sh && chmod +x sspanel-v3-mod-uim-bt.sh && bash sspanel-v3-mod-uim-bt.sh
 
-
-Sspanel后端对接
+Sspanel后端节点对接
 教程使用 VINGA 的博客 的docker部署方法，特点是特别简单，快速，因此本站不演示手动搭建教程。
 
 对接前需要三个参数：节点id 服务器ip 数据库信息（数据库名、用户名、密码）
